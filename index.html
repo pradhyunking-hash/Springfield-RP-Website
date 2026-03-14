@@ -1,0 +1,326 @@
+<!DOCTYPE html><html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Springfield Roleplayz</title>
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;800&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet"><style>
+*{margin:0;padding:0;box-sizing:border-box}
+
+html{
+scroll-behavior:smooth;
+}
+
+body{
+font-family:'Poppins',sans-serif;
+color:white;
+background:black;
+overflow-x:hidden;
+}
+
+/* cosmic animated background */
+body::before{
+content:"";
+position:fixed;
+width:100%;
+height:100%;
+background:radial-gradient(circle at 30% 30%, #1a2a6c, transparent),
+radial-gradient(circle at 70% 60%, #b21f1f, transparent),
+radial-gradient(circle at 40% 80%, #fdbb2d, transparent);
+animation:bgMove 20s infinite alternate;
+z-index:-3;
+}
+
+@keyframes bgMove{
+0%{transform:scale(1)}
+100%{transform:scale(1.2)}
+}
+
+canvas{
+position:fixed;
+top:0;
+left:0;
+z-index:-2;
+}
+
+/* NAVBAR */
+nav{
+position:fixed;
+top:0;
+width:100%;
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:18px 40px;
+background:rgba(0,0,0,0.35);
+backdrop-filter:blur(12px);
+z-index:1000;
+}
+
+nav h2{
+font-family:'Orbitron',sans-serif;
+letter-spacing:2px;
+}
+
+nav a{
+margin-left:25px;
+color:white;
+text-decoration:none;
+opacity:0.8;
+transition:0.3s;
+}
+
+nav a:hover{
+opacity:1;
+text-shadow:0 0 10px cyan;
+}
+
+/* HERO */
+header{
+text-align:center;
+padding:200px 20px 140px 20px;
+}
+
+.logo{
+width:210px;
+margin-bottom:25px;
+filter:drop-shadow(0 0 40px gold);
+animation:floatLogo 6s ease-in-out infinite;
+}
+
+@keyframes floatLogo{
+0%{transform:translateY(0)}
+50%{transform:translateY(-18px)}
+100%{transform:translateY(0)}
+}
+
+h1{
+font-family:'Orbitron',sans-serif;
+font-size:4.5rem;
+text-shadow:0 0 35px cyan;
+}
+
+.subtitle{
+margin-top:15px;
+opacity:0.85;
+font-size:1.25rem;
+}
+
+.buttons{
+margin-top:40px;
+}
+
+button{
+padding:16px 36px;
+margin:10px;
+border:none;
+border-radius:40px;
+background:linear-gradient(45deg,#00eaff,#7b2cff);
+color:white;
+font-size:1rem;
+cursor:pointer;
+transition:0.35s;
+box-shadow:0 0 25px rgba(0,255,255,0.6);
+}
+
+button:hover{
+transform:scale(1.12);
+box-shadow:0 0 45px rgba(0,255,255,1);
+}
+
+section{
+padding:110px 20px;
+text-align:center;
+}
+
+.card{
+max-width:1000px;
+margin:auto;
+padding:55px;
+background:rgba(255,255,255,0.05);
+backdrop-filter:blur(14px);
+border-radius:22px;
+box-shadow:0 0 40px rgba(0,255,255,0.25);
+}
+
+/* FEATURES */
+.features{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+gap:30px;
+margin-top:45px;
+}
+
+.feature{
+padding:30px;
+border-radius:18px;
+background:rgba(255,255,255,0.06);
+box-shadow:0 0 20px rgba(0,255,255,0.25);
+transition:0.4s;
+}
+
+.feature:hover{
+transform:translateY(-12px) scale(1.05);
+box-shadow:0 0 45px cyan;
+}
+
+/* STAFF */
+.staff-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+gap:30px;
+margin-top:45px;
+}
+
+.staff{
+padding:30px;
+border-radius:18px;
+background:rgba(255,255,255,0.06);
+box-shadow:0 0 20px rgba(0,255,255,0.25);
+transition:0.4s;
+}
+
+.staff:hover{
+transform:scale(1.1);
+box-shadow:0 0 45px cyan;
+}
+
+/* GALLERY */
+.gallery{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:25px;
+margin-top:40px;
+}
+
+.gallery img{
+width:100%;
+border-radius:18px;
+transition:0.4s;
+}
+
+.gallery img:hover{
+transform:scale(1.07);
+box-shadow:0 0 40px cyan;
+}
+
+/* DISCORD COUNTER */
+.counter{
+font-family:'Orbitron',sans-serif;
+font-size:3rem;
+margin-top:20px;
+}
+
+footer{
+padding:45px;
+text-align:center;
+opacity:0.6;
+}
+</style></head><body><canvas id="particles"></canvas>
+
+<nav>
+<h2>Springfield RP</h2>
+<div>
+<a href="#">Home</a>
+<a href="#features">Features</a>
+<a href="#staff">Staff</a>
+<a href="#gallery">Gallery</a>
+<a href="https://discord.gg/qGx4RESUC" target="_blank">Discord</a>
+</div>
+</nav><header>
+<img src="logo.png" class="logo" alt="Server Logo">
+<h1>SPRINGFIELD ROLEPLAYZ</h1>
+<p class="subtitle">Elite Emergency Response Liberty County Roleplay Community</p><div class="buttons">
+<a href="https://discord.gg/qGx4RESUC" target="_blank"><button>Join Discord</button></a>
+<a href="https://discord.gg/qGx4RESUC" target="_blank"><button>Apply For Staff</button></a>
+</div>
+</header><section id="features">
+<div class="card">
+<h2>Server Features</h2>
+<div class="features">
+<div class="feature">🚓 Realistic Police Patrol</div>
+<div class="feature">⚖️ Professional Moderation</div>
+<div class="feature">🏙️ Immersive Roleplay Sessions</div>
+<div class="feature">👮 Custom Departments</div>
+<div class="feature">📜 Advanced RP Rules</div>
+<div class="feature">🌎 Active Community</div>
+</div>
+</div>
+</section><section id="staff">
+<div class="card">
+<h2>Staff Team</h2>
+<div class="staff-grid">
+<div class="staff">Owner</div>
+<div class="staff">Co‑Owner</div>
+<div class="staff">Administrator</div>
+<div class="staff">Moderator</div>
+</div>
+</div>
+</section><section id="gallery">
+<div class="card">
+<h2>Server Showcase</h2>
+<div class="gallery">
+<img src="https://images.unsplash.com/photo-1502877338535-766e1452684a">
+<img src="https://images.unsplash.com/photo-1503376780353-7e6692767b70">
+<img src="https://images.unsplash.com/photo-1493238792000-8113da705763">
+</div>
+</div>
+</section><section>
+<div class="card">
+<h2>Join Our Community</h2>
+<p>Become part of Springfield Roleplayz today.</p>
+<div class="buttons">
+<a href="https://discord.gg/qGx4RESUC" target="_blank"><button>Join Discord</button></a>
+</div>
+</div>
+</section><footer>
+<p>© Springfield Roleplayz Community</p>
+</footer><script>
+const canvas=document.getElementById('particles');
+const ctx=canvas.getContext('2d');
+canvas.width=window.innerWidth;
+canvas.height=window.innerHeight;
+
+let particles=[];
+
+for(let i=0;i<180;i++){
+particles.push({
+x:Math.random()*canvas.width,
+y:Math.random()*canvas.height,
+r:Math.random()*2,
+d:Math.random()*1
+});
+}
+
+function draw(){
+ctx.clearRect(0,0,canvas.width,canvas.height);
+ctx.fillStyle='white';
+ctx.beginPath();
+
+for(let i=0;i<particles.length;i++){
+let p=particles[i];
+ctx.moveTo(p.x,p.y);
+ctx.arc(p.x,p.y,p.r,0,Math.PI*2,true);
+}
+
+ctx.fill();
+update();
+}
+
+let angle=0;
+
+function update(){
+angle+=0.01;
+for(let i=0;i<particles.length;i++){
+let p=particles[i];
+p.y+=Math.cos(angle+p.d)+1+p.r/2;
+p.x+=Math.sin(angle)*2;
+
+if(p.x>canvas.width+5||p.x<-5||p.y>canvas.height){
+particles[i]={x:Math.random()*canvas.width,y:-10,r:p.r,d:p.d};
+}
+}
+}
+
+setInterval(draw,33);
+</script></body>
+  </html>
