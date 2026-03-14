@@ -1,1 +1,128 @@
+<!DOCTYPE html><html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>RP Server</title>
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{
+font-family:'Orbitron',sans-serif;
+color:white;
+overflow-x:hidden;
+background:black;
+}/* Animated gradient background */ body::before{ content:""; position:fixed; top:0;left:0;width:100%;height:100%; background:linear-gradient(270deg,#ff00cc,#3333ff,#00ffee,#ff0066); background-size:800% 800%; animation:gradientMove 20s ease infinite; z-index:-2; }
 
+@keyframes gradientMove{ 0%{background-position:0% 50%} 50%{background-position:100% 50%} 100%{background-position:0% 50%} }
+
+/* floating particles */ canvas{ position:fixed; top:0; left:0; z-index:-1; }
+
+header{ text-align:center; padding:120px 20px; }
+
+h1{ font-size:4rem; text-shadow:0 0 20px cyan; }
+
+p{ margin-top:20px; font-size:1.2rem; }
+
+.buttons{ margin-top:40px; }
+
+button{ padding:15px 30px; margin:10px; font-size:1rem; border:none; border-radius:30px; background:linear-gradient(45deg,cyan,magenta); color:white; cursor:pointer; transition:0.3s; box-shadow:0 0 20px rgba(0,255,255,0.6); }
+
+button:hover{ transform:scale(1.1); box-shadow:0 0 30px rgba(255,0,255,0.8); }
+
+section{ padding:80px 20px; text-align:center; }
+
+.card{ background:rgba(0,0,0,0.6); backdrop-filter:blur(10px); padding:40px; margin:20px auto; max-width:600px; border-radius:20px; box-shadow:0 0 20px rgba(0,255,255,0.3); }
+
+footer{ text-align:center; padding:30px; opacity:0.6; } </style>
+
+</head>
+<body><canvas id="particles"></canvas>
+
+<header>
+<img src="Gemini_Generated_Image_8v43e68v43e68v43.png" alt="Springfield Roleplayz Logo" style="width:180px;margin-bottom:25px;filter:drop-shadow(0 0 20px gold);animation:floatLogo 4s ease-in-out infinite;">
+<h1>SPRINGFIELD ROLEPLAYZ</h1>
+<p>Elite Emergency Response: Liberty County Roleplay Community</p>
+<div class="buttons">
+<a href="https://discord.gg/qGx4RESUC" target="_blank"><button>Join Our Discord</button></a>
+<a href="https://discord.gg/qGx4RESUC" target="_blank"><button>Apply For Staff</button></a>
+</div>
+</header><style>
+@keyframes floatLogo{
+0%{transform:translateY(0px)}
+50%{transform:translateY(-12px)}
+100%{transform:translateY(0px)}
+}
+</style><section id="about">
+<div class="card">
+<h2>About Our Server</h2>
+<p>Professional roleplay, active staff, realistic policing, and daily sessions.</p>
+</div>
+</section><section id="rules">
+<div class="card">
+<h2>Server Rules</h2>
+<p>No RDM, No VDM, Respect staff, Follow FearRP.</p>
+</div>
+</section><section id="apply">
+<div class="card">
+<h2>Join Our Staff</h2>
+<p>Applications open now.</p>
+<a href="https://discord.gg/qGx4RESUC" target="_blank"><button>Apply in Discord</button></a>
+</div>
+</section><section id="announcements">
+<div class="card">
+<h2>Live Discord Announcements</h2>
+<p>If Discord server widgets are enabled, announcements from Discord will appear below.</p>
+<iframe src="https://discord.com/widget?id=YOUR_SERVER_ID&theme=dark" width="100%" height="400" allowtransparency="true" frameborder="0"></iframe>
+</div>
+</section><footer>
+<p>© RP Server Community</p>
+</footer><script>
+const canvas=document.getElementById('particles');
+const ctx=canvas.getContext('2d');
+canvas.width=window.innerWidth;
+canvas.height=window.innerHeight;
+
+let particles=[];
+
+for(let i=0;i<120;i++){
+particles.push({
+x:Math.random()*canvas.width,
+y:Math.random()*canvas.height,
+r:Math.random()*2,
+d:Math.random()*1
+});
+}
+
+function draw(){
+ctx.clearRect(0,0,canvas.width,canvas.height);
+ctx.fillStyle='white';
+ctx.beginPath();
+
+for(let i=0;i<particles.length;i++){
+let p=particles[i];
+ctx.moveTo(p.x,p.y);
+ctx.arc(p.x,p.y,p.r,0,Math.PI*2,true);
+}
+
+ctx.fill();
+update();
+}
+
+let angle=0;
+
+function update(){
+angle+=0.01;
+for(let i=0;i<particles.length;i++){
+let p=particles[i];
+p.y+=Math.cos(angle+p.d)+1+p.r/2;
+p.x+=Math.sin(angle)*2;
+
+if(p.x>canvas.width+5||p.x<-5||p.y>canvas.height){
+particles[i]={x:Math.random()*canvas.width,y:-10,r:p.r,d:p.d};
+}
+}
+}
+
+setInterval(draw,33);
+</script></body>
+                                                          </html>
